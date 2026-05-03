@@ -4,7 +4,6 @@
  * Ported from reference/design-assets/scene.jsx TimeOverlay.
  * Uses CSS blend modes to tint the farm image based on time-of-day (0-24).
  */
-import { useEffect } from 'react';
 import { useGameStore } from '../store/gameStore';
 
 function hexToRgb(h: string): { r: number; g: number; b: number } {
@@ -58,16 +57,7 @@ function getTimeGrade(t: number): Grade {
 
 export function TimeOverlay() {
   const time = useGameStore((s) => s.timeOfDay);
-  const speed = useGameStore((s) => s.timeSpeed);
-  const setTimeOfDay = useGameStore((s) => s.setTimeOfDay);
 
-  useEffect(() => {
-    if (speed <= 0) return;
-    const id = window.setInterval(() => {
-      setTimeOfDay(useGameStore.getState().timeOfDay + 0.1 * speed);
-    }, 250);
-    return () => window.clearInterval(id);
-  }, [speed, setTimeOfDay]);
 
   const grade = getTimeGrade(time);
   const isDay = time > 6 && time < 19;
