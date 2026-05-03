@@ -39,6 +39,7 @@
 | `public/assets/**` | 共用 | 任何 session 都可以加；**不要刪別人的** |
 | `public/assets/incoming/` | 暫存區 | 美術貢獻者上傳區，整理後移到正式分類資料夾 |
 | `scripts/**` | 共用 | 加新 script 沒問題；改現有 script 前看 git blame |
+| `.claude/agents/**` | 共用 | 兩邊 session 都可以加新 agent；改既有 agent 前看 git blame，並在 [reference/ALIGNMENT_v1.md](reference/ALIGNMENT_v1.md) 附錄留紀錄。來源與改寫紀錄見 [.claude/agents/README.md](.claude/agents/README.md) |
 
 **衝突時的決策順序**：
 1. Notion DB 內容 > 本地 `docs/`（如果 docs 過時了，更新 docs）
