@@ -1,0 +1,18 @@
+{
+  "app": {
+    "title": "Farm Futures",
+    "subtitle": "Agricultural Commodity Farm Simulator"
+  },
+  "hud": {
+    "day": "Day {{day}}",
+    "season": "Season",
+    "money": "Gold",
+    "stamina": "Stamina"
+  },
+  "season": {
+    "spring": "Spring",
+    "summer": "Summer",
+    "autumn": "Autumn",
+    "winter": "Winter"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "app": {
+    "title": "Farm Futures",
+    "subtitle": "農產品期貨模擬農場"
+  },
+  "hud": {
+    "day": "第 {{day}} 天",
+    "season": "季節",
+    "money": "金幣",
+    "stamina": "體力"
+  },
+  "season": {
+    "spring": "春",
+    "summer": "夏",
+    "autumn": "秋",
+    "winter": "冬"
+  }
+}

@@ -1,0 +1,32 @@
+# dependencies / build output
+node_modules
+dist
+dist-ssr
+coverage
+
+# environment
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# logs / build cache
+*.log
+*.tsbuildinfo
+
+# Claude Code local-only files (do not commit)
+.claude/settings.local.json
+.claude/*.lock
+
+# debug / intermediate artifacts produced by scripts/ (regenerable)
+reference/plot-mask*.png
+reference/plot-annotated*.png
+reference/plot-clean*.png
+reference/plots-detected*.png
+

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 設計討論 (Design discussion)
+    url: https://github.com/
+    about: 還沒成形的點子、跨議題討論，請改用 Notion 或 GitHub Discussions（之後開啟）

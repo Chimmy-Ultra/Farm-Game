@@ -1,0 +1,22 @@
+# CODEOWNERS — 自動指派 reviewer
+# 語法：<glob>  @<github-handle>  [@<another>]
+# 文件：https://docs.github.com/en/repositories/managing-your-repositories-settings-and-customizations/customizing-your-repository/about-code-owners
+#
+# ⚠️  PLACEHOLDER: 等 GitHub repo 建立後，把 OWNER_GITHUB_HANDLE 換成 Kevin 的 GitHub 帳號
+# 例如：@chimmywei
+
+# 預設一切由 Owner review
+*                                           @OWNER_GITHUB_HANDLE
+
+# Notion 邊 SSOT — 改動需要特別小心
+src/data/commodities.ts                     @OWNER_GITHUB_HANDLE
+docs/economic-model.md                      @OWNER_GITHUB_HANDLE
+docs/environmental-systems.md               @OWNER_GITHUB_HANDLE
+docs/asset-prompts.md                       @OWNER_GITHUB_HANDLE
+docs/commodity-list-reconciliation.md       @OWNER_GITHUB_HANDLE
+
+# 工作流文件 — 任何改動都要 owner 看
+.github/                                    @OWNER_GITHUB_HANDLE
+CLAUDE.md                                   @OWNER_GITHUB_HANDLE
+CONTRIBUTING.md                             @OWNER_GITHUB_HANDLE
+README.md                                   @OWNER_GITHUB_HANDLE

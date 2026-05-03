@@ -1,0 +1,6 @@
+# 美術 / 音樂貢獻者上傳區
+
+把新交付的素材丟進這個資料夾（直接拖到 GitHub web UI 就會自動建 PR）。
+AI session 收到 PR 後會把檔案整理 / 重新命名 / 移到正式分類資料夾（例如 public/crops/、public/scenes/）。
+
+詳見 [CONTRIBUTING.md](../../../CONTRIBUTING.md) 第 5 節「美術 / 音樂資產通道」。

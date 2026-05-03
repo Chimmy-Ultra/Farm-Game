@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harvest Ridge — 2.5D Farm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sky-top: #8fb8d8;
+      --sky-mid: #c9d9de;
+      --sky-low: #e4d4b4;
+      --sun: #ffe6b8;
+      --soil-dry: #6b4a2e;
+      --soil-wet: #3a2415;
+      --grass-a: #6f8a3f;
+      --grass-b: #4f6a2a;
+      --grass-c: #3a5222;
+      --wood-a: #8b6a42;
+      --wood-b: #5e4525;
+      --roof: #7a3a24;
+      --stone: #8a8176;
+      --ink: #1d1a14;
+      --paper: #f1e6cf;
+      --panel: rgba(22, 18, 12, 0.78);
+      --panel-line: rgba(245, 228, 188, 0.18);
+      --accent: #d9a441;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; overflow: hidden; background: #0c0a08; color: #f2e9d4; font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    #app { position: fixed; inset: 0; }
+    .loading { position: absolute; inset: 0; display: grid; place-items: center; color: #c7b68a; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; }
+  </style>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="app"><div class="loading">LOADING HARVEST RIDGE…</div></div>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="scene.jsx"></script>
+  <script type="text/babel" src="hud.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
