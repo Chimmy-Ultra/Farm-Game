@@ -21,10 +21,10 @@ export interface PlotQuad {
 }
 
 export const PLOT: PlotQuad = {
-  tl: { x: 47.25, y: 30.41 },
-  tr: { x: 82.52, y: 22.27 },
-  br: { x: 72.89, y: 68.55 },
-  bl: { x: 38.04, y: 75.57 },
+  tl: { x: 42.5, y: 28.5 },
+  tr: { x: 79.5, y: 18.5 },
+  br: { x: 71.5, y: 63.5 },
+  bl: { x: 35.5, y: 71.0 },
 };
 
 export function gridToPercent(col: number, row: number): PlotCorner {
