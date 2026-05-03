@@ -3,7 +3,7 @@ import { tileKey, GRID_COLS, GRID_ROWS, type TileState } from '../game/tile';
 import { useTileStore } from '../store/tileStore';
 import { useToolStore } from '../store/toolStore';
 import { useGameStore } from '../store/gameStore';
-import { gridToPercent, tileFootprint } from '../hooks/useIsoGrid';
+import { gridToPercent, tileFootprint, isoTileClipPath } from '../hooks/useIsoGrid';
 import { CROPS } from '../game/crops';
 import { COMMODITIES } from '../data/commodities';
 import { spriteUrlForCrop } from '../assets/cropSprites';
@@ -25,12 +25,13 @@ interface TileCellProps {
   hovered: boolean;
   tileW: number;
   tileH: number;
+  clipPath: string;
   onEnter: () => void;
   onLeave: () => void;
   onClick: () => void;
 }
 
-function TileCell({ col, row, tile, hovered, tileW, tileH, onEnter, onLeave, onClick }: TileCellProps) {
+function TileCell({ col, row, tile, hovered, tileW, tileH, clipPath, onEnter, onLeave, onClick }: TileCellProps) {
   const { x, y } = gridToPercent(col, row);
   const fill = STAGE_FILL[tile.stage];
   const watered = tile.watered && tile.stage !== 'untouched';
@@ -47,6 +48,7 @@ function TileCell({ col, row, tile, hovered, tileW, tileH, onEnter, onLeave, onC
         width: `${tileW}%`,
         height: `${tileH}%`,
         transform: 'translate(-50%, -50%)',
+        clipPath,
         cursor: 'pointer',
         pointerEvents: 'auto',
       }}
@@ -181,11 +183,12 @@ export function FarmScene2D() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
 
-  const { tileW, tileH } = useMemo(() => {
+  const { tileW, tileH, clipPath } = useMemo(() => {
     const { colVec, rowVec } = tileFootprint();
     return {
       tileW: Math.abs(colVec.x) + Math.abs(rowVec.x),
       tileH: Math.abs(colVec.y) + Math.abs(rowVec.y),
+      clipPath: isoTileClipPath(),
     };
   }, []);
 
@@ -315,6 +318,7 @@ export function FarmScene2D() {
                 hovered={hovered === key}
                 tileW={tileW}
                 tileH={tileH}
+                clipPath={clipPath}
                 onEnter={() => setHovered(key)}
                 onLeave={() => setHovered((h) => (h === key ? null : h))}
                 onClick={() => handleTileClick(col, row)}

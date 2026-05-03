@@ -60,3 +60,21 @@ export function tileFootprint(): TileFootprint {
     },
   };
 }
+
+/**
+ * Returns a CSS clip-path polygon that matches the isometric parallelogram
+ * shape of each tile, so hit areas and visual overlays align with the 2.5D art.
+ *
+ * The four vertices (clockwise from top-right peak):
+ *   top-right → right → bottom-left → left
+ */
+export function isoTileClipPath(): string {
+  const { colVec, rowVec } = tileFootprint();
+  const tileW = Math.abs(colVec.x) + Math.abs(rowVec.x);
+  const tileH = Math.abs(colVec.y) + Math.abs(rowVec.y);
+  // a = how far right the column vector pushes (as % of tile width)
+  // b = how far up the column vector pushes (as % of tile height)
+  const a = Math.round(Math.abs(colVec.x) / tileW * 100);
+  const b = Math.round(Math.abs(colVec.y) / tileH * 100);
+  return `polygon(100% 0%, ${a}% ${100 - b}%, 0% 100%, ${100 - a}% ${b}%)`;
+}
