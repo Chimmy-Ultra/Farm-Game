@@ -144,3 +144,16 @@
 | `docs/asset-prompts.md` | Local | 117 條 AI 圖像 prompt |
 | `docs/environmental-systems.md` | Local | 土壤/季節/天氣 |
 | `docs/economic-model.md` | Local | 期貨經濟模型 |
+
+---
+
+## 🤖 附錄：Claude Code Agents 來源紀錄
+
+`.claude/agents/` 下的 5 個 subagent 從上游 [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) 精選改寫而來（MIT License）。
+
+- **Pinned upstream commit**: `a1697d670e56d83561c42566532b1af5c7c21622`（2026-05-03 抓的）
+- **不是 git submodule** — 手動拷貝改寫。追新版時需人工 diff 上游。
+- **改了哪些**：詳見 [.claude/agents/README.md](../.claude/agents/README.md)。
+- **沒帶進來**：上游 49 個裡其他 44 個 agent、72 個 slash command、39 個文件 template、12 個 hooks。
+
+如果 Notion 邊 session 也想加 agent，請在這個附錄追加紀錄，避免重複。
